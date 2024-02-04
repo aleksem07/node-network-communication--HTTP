@@ -1,0 +1,24 @@
+{
+  "name": "network-communication--http",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleksem07/node-network-communication--HTTP.git"
+  },
+  "author": "aleksem07",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aleksem07/node-network-communication--HTTP/issues"
+  },
+  "homepage": "https://github.com/aleksem07/node-network-communication--HTTP#readme",
+  "devDependencies": {
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
