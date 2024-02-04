@@ -1,7 +1,11 @@
-const path = require('path');
+import path from 'path';
 
 module.exports = {
-  entry: './src/index.js',
+  mode: 'production',
+  entry: './src/index.ts',
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
