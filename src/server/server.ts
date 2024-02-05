@@ -1,5 +1,5 @@
 import http from 'http';
-const port = 3000;
+const port = 3002;
 
 export const server = http.createServer((req, res) => {
   console.log('Url:', req.url);
@@ -8,9 +8,11 @@ export const server = http.createServer((req, res) => {
   console.log('Все заголовки');
   console.log(req.headers);
 
-  res.end('Hello Server12qw3');
+  res.end('Hello Server');
 });
 
 server.listen(port, () => {
   console.log(`The server is running on port:${port}`);
 });
+
+console.log('sdsdsd23232rss');
