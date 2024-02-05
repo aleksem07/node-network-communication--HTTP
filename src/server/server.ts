@@ -14,5 +14,3 @@ export const server = http.createServer((req, res) => {
 server.listen(port, () => {
   console.log(`The server is running on port:${port}`);
 });
-
-console.log('sdsdsd23232rss');
