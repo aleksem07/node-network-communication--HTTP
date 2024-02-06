@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-interface IUsers {
+export interface IUsers {
   id: string;
   username: string;
   age: number;
@@ -10,7 +10,7 @@ interface IUsers {
 export const users: IUsers[] = [
   {
     id: uuidv4(),
-    username: 'Vasiliy',
+    username: 'Vasil',
     age: 30,
     hobbies: ['football', 'beer'],
   },
