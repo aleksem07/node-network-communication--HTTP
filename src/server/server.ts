@@ -5,6 +5,7 @@ import { AppRoutes } from '../common/routes';
 import { validate } from 'uuid';
 import { IUsers } from '../data/users';
 import { v4 as uuidv4 } from 'uuid';
+import fs from 'fs';
 
 require('dotenv').config();
 
@@ -62,9 +63,21 @@ export const server = http.createServer((req, res) => {
         res.end('request body does not contain required fields (username or age or hobbies)');
         return;
       }
+
       users.push(newUser);
-      res.writeHead(201, { 'Content-Type': 'application/json' });
-      res.end(`User created`);
+
+      fs.writeFile(
+        './src/data/users.js',
+        `exports.users = ${JSON.stringify(users, null, 2)};`,
+        (err) => {
+          if (err) {
+            res.writeHead(500, { 'Content-Type': 'text/plain' });
+            res.end(err.message);
+          }
+          res.writeHead(201, { 'Content-Type': 'application/json' });
+          res.end(`User created`);
+        }
+      );
     });
   }
 });

@@ -17,8 +17,8 @@
 5 скопировать id юзера
 6 GET localhost:3005/api/users/id (например localhost:3005/api/users/ba661737-dbf0-4354-b4cb-c4b90eaa0e7a) - получить юзера по id
 7 POST localhost:3005/api/users - в body переключить на raw, json, добавить юзера (напр. `{
-    "username": "df",
+    "username": "Jo",
     "age": 23,
-    "hobbies": ["soccer", "sky"],
+    "hobbies": ["soccer"],
 }`) . Поля username, age, hobbies обязательны. Любые остальные - по желанию.
 8 Повторить пункт 4, чтобы убедиться, что юзер добавлен
