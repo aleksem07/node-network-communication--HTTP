@@ -1,15 +1,6 @@
 exports.users = [
   {
-    "id": "3b3d4556-bf29-4b55-8b14-f6b45fe3fac2",
-    "username": "Vasil",
-    "age": 30,
-    "hobbies": [
-      "football",
-      "beer"
-    ]
-  },
-  {
-    "id": "32680cb9-ed00-4984-964e-dc6791545a05",
+    "id": "e65d5e14-6cd4-46f5-a036-3eabd251a4d8",
     "username": "Kuksa",
     "age": 30,
     "hobbies": [
@@ -18,27 +9,11 @@ exports.users = [
     ]
   },
   {
-    "id": "3a38956c-9a28-4a9d-80f0-10214322f4fc",
-    "username": "0test02",
-    "age": 235,
+    "id": "e4a4c724-f159-4996-bcf9-9da736c457ad",
+    "username": "Sem",
+    "age": 12305,
     "hobbies": [
-      "soc33w212"
-    ]
-  },
-  {
-    "id": "e456dd13-591f-4915-bfd3-da8f0fb12fae",
-    "username": "0te9992",
-    "age": 235,
-    "hobbies": [
-      "so9992"
-    ]
-  },
-  {
-    "id": "c7d7c39b-b92b-450a-8125-dd344a7f2691",
-    "username": "0te9992",
-    "age": 235,
-    "hobbies": [
-      "so9992"
+      "pro"
     ]
   }
 ];
