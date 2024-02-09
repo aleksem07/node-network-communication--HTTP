@@ -40,21 +40,5 @@ exports.users = [
     "hobbies": [
       "so9992"
     ]
-  },
-  {
-    "id": "cc852699-42ef-4b4b-9571-2485bae9b779",
-    "username": "0te9992",
-    "age": 235,
-    "hobbies": [
-      "so9992"
-    ]
-  },
-  {
-    "id": "60596057-5760-4ccf-9f58-cf27827dbbe2",
-    "username": "0te99432",
-    "age": 235,
-    "hobbies": [
-      "so9992"
-    ]
   }
 ];

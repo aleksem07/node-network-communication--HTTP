@@ -80,6 +80,36 @@ export const server = http.createServer((req, res) => {
       );
     });
   }
+
+  if (method === 'DELETE' && url.startsWith(`${AppRoutes.USERS}/`)) {
+    if (!validate(userId)) {
+      res.writeHead(400, { 'Content-Type': 'text/plain' });
+      res.end('userId is invalid (not uuid)');
+      return;
+    }
+
+    const userIndex = users.findIndex((user) => user.id === userId);
+    if (userIndex === -1) {
+      res.writeHead(404, { 'Content-Type': 'text/plain' });
+      res.end("User doesn't exist");
+      return;
+    }
+
+    users.splice(userIndex, 1);
+
+    fs.writeFile(
+      './src/data/users.js',
+      `exports.users = ${JSON.stringify(users, null, 2)};`,
+      (err) => {
+        if (err) {
+          res.writeHead(500, { 'Content-Type': 'text/plain' });
+          res.end(err.message);
+        }
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(`User deleted`);
+      }
+    );
+  }
 });
 
 server.listen(PORT, () => {
