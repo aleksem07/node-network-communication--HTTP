@@ -1,24 +1,68 @@
 # node-network-communication--HTTP
 
-`npm init`
+1. Install Dependencies: Before starting, make sure to install the dependencies by running npm install in your terminal.
+2. Start the Server: Ensure your server is running. Run one of the following commands in your terminal, depending on the mode you want to run:
 
-`"start"`: запускает в режиме dev
-`"start:prod"`: запускает в режиме prod
+Development Mode:
 
-`.env` - переменные среды
+```
+  npm start
 
-порт 3005 || 3000
+```
 
-1 установить npm inint
-2.1 запустить сервер `npm start`
-2.2 запустить postman
-3 GET localhost:3005 - получить приветственное сообщение
-4 GET localhost:3005/api/users- массив пользователей (несколько добавлены по умолчанию)
-5 скопировать id юзера
-6 GET localhost:3005/api/users/id (например localhost:3005/api/users/ba661737-dbf0-4354-b4cb-c4b90eaa0e7a) - получить юзера по id
-7 POST localhost:3005/api/users - в body переключить на raw, json, добавить юзера (напр. `{
-    "username": "Jo",
-    "age": 23,
-    "hobbies": ["soccer"],
-}`) . Поля username, age, hobbies обязательны. Любые остальные - по желанию.
-8 Повторить пункт 4, чтобы убедиться, что юзер добавлен
+Production Mode:
+
+```
+    npm run start:prod
+```
+
+Note that the port number for the application is specified in the `.env` file. By default, it's port `3005`.
+
+3.Open Postman: Launch Postman on your computer.
+
+4.Create Requests:
+
+    For each endpoint of your server, create a corresponding request in Postman.
+    Enter the URL for each request. For example, for GET /api/users, enter http://localhost:3005/api/users.
+    Specify the request method (GET, POST, PUT, DELETE) to match the corresponding method of your endpoint.
+    Add necessary headers, such as Content-Type: application/json for POST and PUT requests.
+
+5.Send Requests:
+
+    Click the "Send" button to send the request.
+    Review the response from the server at the bottom of the Postman window.
+
+6.Check Responses:
+
+    Ensure that the response matches the expected behavior specified in your code.
+    Verify that the response code matches the expected codes (200, 201, 400, 404, etc.).
+    Check the response body for correct data or error messages.
+
+7.Sample Requests:
+
+    POST Request Example:
+        URL: http://localhost:3005/api/users
+        Method: POST
+        Request Body:
+
+        json
+
+    {
+        "username": "Name",
+        "age": 30,
+        "hobbies": ["soccer"]
+    }
+
+PUT Request Example:
+
+    URL: http://localhost:3005/api/users/{userId}
+    Method: PUT
+    Request Body:
+
+    json
+
+    {
+    "username": "NewName",
+    "age": 35,
+    "hobbies": ["football", "basketball"]
+    }
