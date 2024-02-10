@@ -12,11 +12,16 @@ require('dotenv').config();
 
 const PORT: number = Number(process.env.PORT || 3000);
 const numCPUs = os.cpus().length;
+const isMulti = process.argv.includes('multi');
 
 if (cluster.isPrimary) {
-  console.log(`Master ${process.pid} is running. Listening on port ${PORT}`);
+  console.log(`Primary ${process.pid} is running.`);
 
-  for (let i = 0; i < numCPUs - 1; i++) {
+  if (isMulti) {
+    for (let i = 0; i < numCPUs; i++) {
+      cluster.fork();
+    }
+  } else {
     cluster.fork();
   }
 
@@ -160,7 +165,7 @@ if (cluster.isPrimary) {
     }
   });
 
-  server.listen(PORT, () => {
-    console.log(`Worker ${process.pid} started. Listening on port ${workerPort}`);
+  server.listen(workerPort, () => {
+    console.log(`Worker ${process.pid} started. Listening on port ${workerPort} `);
   });
 }
