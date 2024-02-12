@@ -16,6 +16,12 @@ Production Mode:
     npm run start:prod
 ```
 
+Multi Mode:
+
+```
+    npm run start:multi
+```
+
 Note that the port number for the application is specified in the `.env` file. By default, it's port `3005`.
 
 3.Open Postman: Launch Postman on your computer.
